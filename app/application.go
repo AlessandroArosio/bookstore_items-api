@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"github.com/alessandroarosio/bookstore_items-api/clients/elasticsearch"
 	"github.com/gorilla/mux"
 	"net/http"
 	"time"
@@ -12,6 +13,8 @@ var (
 )
 
 func StartApplication() {
+	elasticsearch.Init()
+
 	mapUrls()
 	serverAddr := "127.0.0.1:8080"
 
